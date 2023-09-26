@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "STD.h"
 #include "SDB.h"
+#include "SDB.c"
 
 //executing the function based on the choice
 void SDB_action(uint8 choice) //function contains a super loop to preform a certain operation(case), depending on the choice of the user
@@ -96,11 +97,12 @@ void SDB_action(uint8 choice) //function contains a super loop to preform a cert
 
 void SDB_APP()  // This function concludes the whole app
 {
+    extern uint8 count;
     while(count != 3) //to make sure at first we enter three students
     {
        SDB_AddEntry();
     }
-	
+
     while (1)  // to ensure the program always working
     {
         uint8 choice;   //to allow the user to choose the operation he wants to be done unless exitted by the exit case
@@ -117,7 +119,7 @@ void SDB_APP()  // This function concludes the whole app
         fflush(stdin);
 
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        scanf("%u", &choice);
 
         SDB_action(choice); //calling for the function that will enable the operation selected to be preformed
     }

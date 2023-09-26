@@ -8,7 +8,7 @@ student* start = NULL; //head pointer to the first node in dynamic memory alloca
 
 
 bool SDB_IsFull ()    //for knowing if the database capacity is full or not
-{   
+{
     if(10 == count)
       {
           return true; //full
@@ -163,7 +163,7 @@ bool SDB_ReadEntry(uint32 id) //function to display other data of student when h
         }
         current = current->link;
     }
-    
+
     if(start == NULL)  //if the database is empty
     {
         printf("there are no students in the database!\n");
@@ -188,13 +188,13 @@ void SDB_GetList(uint32 *list) //creating a list (array) to have all the entered
         current = current->link; //moving forward to the next node
     }
     if(start != NULL)  //if there are students in the database
-    { 
+    {
         for(index = 0; index < count; index++)
         {
            printf("Student ID : %u  \n", list[index]);  // printing the student ID
         }
     }
-   
+
 }
 
 bool SDB_IsIdExist(uint32 id)

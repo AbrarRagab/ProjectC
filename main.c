@@ -1,6 +1,8 @@
+#include "SDBAPP.c"
+
 int main()
 {
-    void SDB_APP();
+   SDB_APP();
     return 0;
 }
 
